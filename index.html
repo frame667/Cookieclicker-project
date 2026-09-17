@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="game">
+    <h1>Cookie Clicker</h1>
+
+    <p class="cookie-count">
+      <span id="cookie-count">0</span> cookies
+    </p>
+    <p class="cps-count">
+      <span id="cps-display">0.0</span> cookies/sec
+    </p>
+
+    <div class="cookie-wrapper">
+      <button id="cookie" class="cookie-button" aria-label="Klik op de cookie">
+        🍪
+      </button>
+    </div>
+
+    <section class="shop">
+      <h2>Shop</h2>
+      <div id="quantity-selector" class="quantity-selector"></div>
+      <div id="shop"></div>
+    </section>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

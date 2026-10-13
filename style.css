@@ -1,189 +1,206 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html{
+    height: 100vh;
+    scrollbar-width: none;
+}
+body{
+    background-color: #fdf6ec;
+    color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, sans-serif;
-  background-color: #fdf6ec;
+p{
+    font-size: 30px;  
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 900;  
+
 }
 
-.game {
-  text-align: center;
+
+#cookie {
+    width: 350px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #6b4226;
+#cookie:active {
+    animation: cookieBounce 0.3s ease;
 }
 
-.cookie-count {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  color: #4a2e1e;
+.shop{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 52px;
 }
 
-.cookie-button {
-  font-size: 8rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.1s ease;
+h2{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.cookie-button:active {
-  transform: scale(0.9);
+.shop button.bought{
+    background-color: #d9fdd3;
 }
 
-.cps-count {
-  font-size: 1rem;
-  color: #8a6a4f;
-  margin-bottom: 20px;
-  transition: transform 0.2s ease, color 0.2s ease;
+.shop P {
+    font-size: 16px;
+    font-weight:normal;
+    margin: 4px;
 }
 
-.cps-count.cps-pulse {
-  animation: pulse 0.4s ease-out;
+
+.shop button{
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    color: #8a6a4f;
-  }
-  40% {
-    transform: scale(1.15);
-    color: #4caf7d;
-  }
-  100% {
-    transform: scale(1);
-    color: #8a6a4f;
-  }
+.shop button{
+    width: 300px;
+    padding: 16px;
+    margin: 16px;
+    border: 1px solid #e0d0bb;
+    border-radius: 16px;
+    background-color: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.auto-popup {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1rem;
-  font-weight: bold;
-  color: #4caf7d;
-  pointer-events: none;
-  animation: floatUpSmall 1s ease-out forwards;
+.shop button:hover{
+    border: 1px solid #747789;
+    transform: scale(1.03);
 }
 
-@keyframes floatUpSmall {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -30px);
-  }
+.shop button:active{
+    animation: buybounce 0.2s ease;
 }
 
-.shop {
-  margin-top: 40px;
-  width: 320px;
-  text-align: left;
+.cost{
+    color: gold;
 }
 
-.shop h2 {
-  color: #6b4226;
-  margin-bottom: 12px;
-  text-align: center;
+
+.description{
+    color: #747789;
 }
 
-.cookie-wrapper {
-  position: relative;
-  display: inline-block;
+
+.shop button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-.click-popup {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #d9a066;
-  pointer-events: none;
-  animation: floatUp 0.8s ease-out forwards;
+.shop button{
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-@keyframes floatUp {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -60px);
-  }
+@keyframes cookieBounce {
+    0%{
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(0.85) rotate(-8deg);
+    }
+
+    70% {
+        transform: scale(1.08) rotate(5deg);
+    }
+
+    100%{
+        transform: scale(1)
+    }
 }
 
-.quantity-selector {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 16px;
+#cookie:active{
+    animation: cookieBounce 0.3s ease;
 }
 
-.qty-button {
-  padding: 6px 14px;
-  border: 1px solid #d9a066;
-  border-radius: 6px;
-  background-color: #fff;
-  color: #6b4226;
-  font-size: 0.85rem;
-  cursor: pointer;
+
+@keyframes buybounce {
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
 }
 
-.qty-button.qty-active {
-  background-color: #d9a066;
-  color: #fff;
+@keyframes purchaseEffect {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.06);
+        background-color: #d9fdd3;
+    }
+    100%{
+        transform: scale(1);
+        background-color: #fff;
+    }
 }
 
-.shop-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid #e0d0bb;
-  border-radius: 8px;
-  padding: 12px 16px;
-  margin-bottom: 10px;
+.shop button.purchased{
+    animation: purchaseEffect 0.3s ease;
 }
 
-.shop-item-info {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.85rem;
-  color: #4a2e1e;
+.overview{
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.buy-button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  background-color: #d9a066;
-  color: #fff;
-  font-size: 0.85rem;
-  cursor: pointer;
+.overview p{
+    font-size: 16px;
+    font-weight: normal;
+    margin: 4px;
 }
 
-.buy-button:disabled {
-  background-color: #d9d0c4;
-  cursor: not-allowed;
+.floating-number{
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #c0392b;
+    animation: floatUp 1s ease-out forwards;
 }
 
-.buy-button:not(:disabled):hover {
-  background-color: #c68a4f;
+@keyframes floatUp{
+    0%{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%, -80px);
+    }
+}
+
+.buy-mode{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.buy-mode button{
+    padding: 10px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #e0d0bb;
+    border-radius: 12px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.buy-mode button.active{
+    background-color: #d9fdd3;
+    border-color: #747789;
 }

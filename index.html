@@ -1,37 +1,125 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cookie Clicker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <main class="game">
-    <h1>Cookie Clicker</h1>
+    <p id="count">cookies: 0</p>
+    <p id="persecond">per seconds: 0 cookies</p>
 
-    <p class="cookie-count">
-      <span id="cookie-count">0</span> cookies
-    </p>
-    <p class="cps-count">
-      <span id="cps-display">0.0</span> cookies/sec
-    </p>
+    <img id="cookie" draggable="false" src="img/cookie.png"alt="cookie" >
 
-    <div class="cookie-wrapper">
-      <button id="cookie" class="cookie-button" aria-label="Klik op de cookie">
-        🍪
-      </button>
-    </div>
+    <section class="buy-mode">
+    <button data-amount="1" class="active">x1</button>
+    <button data-amount="10">x10</button>
+    <button data-amount="20">x20</button>
+</section>
 
-    <section class="shop">
-      <h2>Shop</h2>
-      <div id="quantity-selector" class="quantity-selector"></div>
-      <div id="shop"></div>
-    </section>
+<section class="shop">
 
-  </main>
+    <button id="cursor">
+        <p>cursor</p>
+        <p class="cost">🍪10</p>
+        <p class="description">+0.1 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
 
-  <script src="game.js"></script>
+    <button id="oma">
+        <p>oma</p>
+        <p class="cost">🍪50</p>
+        <p class="description">+1 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+    <button id="fabriek">
+        <p>fabriek</p>
+        <p class="cost">🍪100</p>
+        <p class="description">+3 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+    <button id="molen">
+        <p>molen</p>
+        <p class="cost">🍪500</p>
+        <p class="description">+8 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+    <button id="boerderij">
+        <p>boerderij</p>
+        <p class="cost">🍪1100</p>
+        <p class="description">+15 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+    <button id="mijn">
+        <p>mijn</p>
+        <p class="cost">🍪5000</p>
+        <p class="description">+60 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+    <button id="bank">
+        <p>bank</p>
+        <p class="cost">🍪20000</p>
+        <p class="description">+200 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+    <button id="tempel">
+        <p>tempel</p>
+        <p class="cost">🍪100000</p>
+        <p class="description">+800 cookies/sec</p>
+        <p class="amount">aantal: 0</p>
+    </button>
+
+</section>
+
+<h2>Upgrades</h2>
+
+<section class="shop">
+
+    <button id="upgrade-klik">
+        <p>sterkere vinger</p>
+        <p class="cost">🍪100</p>
+        <p class="description">elke klik geeft 2x zo veel</p>
+    </button>
+
+    <button id="upgrade-cursor">
+        <p>dubbele cursors</p>
+        <p class="cost">🍪250</p>
+        <p class="description">cursors produceren 2x zo veel</p>
+    </button>
+
+    <button id="upgrade-oma">
+        <p>gelukkige oma's</p>
+        <p class="cost">🍪1000</p>
+        <p class="description">oma's produceren 2x zo veel</p>
+    </button>
+
+    <button id="upgrade-fabriek">
+        <p>turbo fabrieken</p>
+        <p class="cost">🍪2500</p>
+        <p class="description">fabrieken produceren 2x zo veel</p>
+    </button>
+
+    <button id="upgrade-boost">
+        <p>cookie-boost</p>
+        <p class="cost">🍪25000</p>
+        <p class="description">alle productie 1,5x zo veel</p>
+    </button>
+
+</section>
+
+<h2>Gekocht</h2>
+<section id="overview" class="overview"></section>
+
 </body>
 </html>
